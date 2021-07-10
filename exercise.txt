@@ -1,0 +1,75 @@
+1. What is HTTP?
+HTTP is Hypertext Transfer Protocol - it's the protocol that is used for web documents.  It's a way of transmitting documents via the internet.  It's frequently used for communication between web browsers and web servers.
+2.  URL
+Uniform Resource Locator -- Contains the Protocol, Domain, Document - It's the address where a document is listed on the internet.
+3.  What is DNS?
+DNS is the human-readable format for an IP Address.  
+4.  What is a query string?  
+Query String is the small string put at the end of a URL that contains stuff like a key-value pair that you may be searching for, or certain parameters for the site.
+5.  What are two HTTP verbs and how are they different?
+GET allows you to retrieve a document, without modifying it or leaving any side effects, typically by placing a URL in the browser.  POST allows you to modify a document, with arguments typically sent in the body of the request.
+6. What is an HTTP Request?
+An HTTP Request is the request that a computer sends to a server to request information/documents/files/etc.
+7. What is an HTTP Response?  
+The Response is the data that is returned from the server following the request, which is then typically rendered by the Browser.
+8. HTTP Header is the parameters for the Request/Response, that provides information such as the language, the format (html, json, etc), the type of request (GET, POST, etc), Cookies, etc.
+Another common response header is Content-Type.
+9.  When you type a URL into a browser, the Browser parses the URL for the DNS, and attempts to locate the IP address.  It then makes a request for information from that URL, in this case in a GET request.  The server will then typically reach out to a database server for more information, get the information from the database, and return the database to the user in the form of a RESPONSE.  The browser will then render the response, typically in the form of an HTML document.
+
+Part 2: 
+Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes involving the word “pirate”
+Use dig to find what the IP address is for icanhazdadjoke.com
+Make a simple web page and serve it using python3 -m http.server. Visit the page in a browser.
+
+{
+  "current_page": 1,
+  "limit": 20,
+  "next_page": 1,
+  "previous_page": 1,
+  "results": [
+    {
+      "id": "QuscibaMClb",
+      "joke": "What does a pirate pay for his corn? A buccaneer!"
+    },
+    {
+      "id": "SvzIBAQS0Dd",
+      "joke": "What did the pirate say on his 80th birthday? Aye Matey!"
+    },
+    {
+      "id": "2gii3LeN7Ed",
+      "joke": "Why couldn't the kid see the pirate movie? Because it was rated arrr!"
+    },
+    {
+      "id": "exXSCtkOKe",
+      "joke": "Why do pirates not know the alphabet? They always get stuck at \"C\"."
+    },
+    {
+      "id": "SnOf2gqjiqc",
+      "joke": "Why are pirates called pirates? Because they arrr!"
+    }
+  ],
+  "search_term": "pirate",
+  "status": 200,
+  "total_jokes": 5,
+  "total_pages": 1
+}
+
+; <<>> DiG 9.16.1-Ubuntu <<>> icanhazdadjoke.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33997
+;; flags: qr rd ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;icanhazdadjoke.com.		IN	A
+
+;; ANSWER SECTION:
+icanhazdadjoke.com.	0	IN	A	104.21.37.176
+icanhazdadjoke.com.	0	IN	A	172.67.211.64
+
+;; Query time: 20 msec
+;; SERVER: 172.27.160.1#53(172.27.160.1)
+;; WHEN: Sat Jul 10 10:20:37 EDT 2021
+;; MSG SIZE  rcvd: 86
+
